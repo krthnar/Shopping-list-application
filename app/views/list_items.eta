@@ -1,0 +1,37 @@
+<% layout("./layouts/layout.eta") %>
+<h1>Shopping List: <%= it.list.name %></h1>
+
+<h2>Add an Item</h2>
+<form method="POST" action="/lists/<%= it.list.id %>/items">
+    <input type="text" name="name" placeholder="New Item name" required />
+    <input type="submit" value="Add Item" />
+</form>
+
+<h2> Items:</h2>
+<ul>
+<% 
+  // Separate and sort items (uncollected first, collected later)
+  const uncollectedItems = it.items.filter(item => !item.collected).sort((a, b) => a.name.localeCompare(b.name));
+  const collectedItems = it.items.filter(item => item.collected).sort((a, b) => a.name.localeCompare(b.name));
+  const sortedItems = [...uncollectedItems, ...collectedItems];
+  
+  sortedItems.forEach((item) => { %>
+    <li>
+      <% if (item.collected) { %>
+        <del><%= item.name %></del>
+      <% } else { %>
+        <%= item.name %>
+      <% } %>
+
+      <!-- Button to mark item as collected (only if not collected) -->
+      <% if (!item.collected) { %>
+        <form method="POST" action="/lists/<%= it.list.id %>/items/<%= item.id %>/collect" style="display:inline;">
+            <input type="submit" value="Mark collected!" />
+        </form>
+      <% } %>
+    </li>
+  <% }); %>
+</ul>
+<nav>
+<a href="/lists">Shopping lists</a>
+</nav>

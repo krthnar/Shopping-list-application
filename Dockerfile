@@ -2,7 +2,7 @@ FROM denoland/deno:alpine-1.37.0
 
 EXPOSE 7777
 
-WORKDIR /
+WORKDIR /app
 
 COPY /app/deps.js .
 

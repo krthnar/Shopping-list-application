@@ -7,6 +7,7 @@ assignments -- for the free online Web Software Development course available at
 ## Contents
 
 The walking skeleton has a simple Deno application that starts on port `7777`.
+This is a web-based shopping list application that allows users to create, edit, and manage their shopping lists.
 The application is used to maintain the shopping list and logging the contents
 of the database table `shopping_lists` to the console.
 

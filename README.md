@@ -11,6 +11,17 @@ This is a web-based shopping list application that allows users to create, edit,
 The application is used to maintain the shopping list and logging the contents
 of the database table `shopping_lists` to the console.
 
+shopping-lists/
+├── app.js                # Main application entry point
+├── controllers/          # Contains application logic and controllers
+├── services/             # Contains service layer (e.g., itemService.js)
+├── views/                # Frontend views (if applicable)
+├── database/             # Database migrations and seeders
+├── Dockerfile            # Docker configuration for the app
+├── docker-compose.yml    # Docker Compose file to orchestrate containers
+├── README.md             # This file
+└── .env                  # Environment variables (ignored by git)
+
 Launching the walking skeleton starts the Deno application, a PostgreSQL server,
 and a database migration process (Flyway).
 
@@ -24,6 +35,8 @@ The walking skeleton is used with Docker Compose.
   where you wrote the command `docker compose up`. Another option is to open up
   a new terminal and navigate to the folder that contains the
   `docker-compose.yml` file, and then write `docker compose stop`.
+
+  
 
 ## Watching for changes
 

@@ -94,6 +94,10 @@ The walking skeleton also comes with a few default VSCode settings. These
 settings can be found in the `settings.json` file in the `.vscode` folder. By
 default, we assume that you have the VSCode Deno plugin.
 
+Online Deployment Link:
+
+Project has been deployed to render, the link for the online deployment is https://shopping-list-application-cl2x.onrender.com
+
 ## E2E Tests with playwright
 
 The walking skeleton comes also with simple
